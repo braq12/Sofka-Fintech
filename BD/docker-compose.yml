@@ -1,0 +1,22 @@
+services:
+  oracle:
+    image: gvenzl/oracle-free:latest-faststart
+    container_name: bd_oracle_sofka
+    ports:
+      - "1521:1521"
+      - "5500:5500"
+    environment:
+      ORACLE_PASSWORD: "admin123"
+      APP_USER: "SOFKA"
+      APP_USER_PASSWORD: "admin123"
+    volumes:
+      - oracle_datos_sofka:/opt/oracle/oradata
+    healthcheck:
+      test: ["CMD", "bash", "-lc", "echo 'select 1 from dual;' | sqlplus -s system/admin123@localhost/FREEPDB1 >/dev/null 2>&1"]
+      interval: 20s
+      timeout: 10s
+      retries: 20
+
+volumes:
+  oracle_datos_sofka:
+
