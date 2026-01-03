@@ -2,8 +2,8 @@ package com.sofka.fintech.api;
 
 import com.sofka.fintech.api.dto.RespuestaTransaccion;
 import com.sofka.fintech.api.dto.SolicitudCrearTransaccion;
+import com.sofka.fintech.aplicacion.CasoUsoListarTransacciones;
 import com.sofka.fintech.aplicacion.CasoUsoRegistrarTransaccion;
-
 import com.sofka.fintech.puertos.salida.PublicadorTransacciones;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -18,18 +18,26 @@ import reactor.core.publisher.Mono;
 public class ControladorTransaccion {
 
     private final CasoUsoRegistrarTransaccion casoUsoRegistrarTransaccion;
+    private final CasoUsoListarTransacciones casoUsoListarTransacciones;
     private final PublicadorTransacciones publicadorTransacciones;
 
     public ControladorTransaccion(CasoUsoRegistrarTransaccion casoUsoRegistrarTransaccion,
+                                  CasoUsoListarTransacciones casoUsoListarTransacciones,
                                   PublicadorTransacciones publicadorTransacciones) {
         this.casoUsoRegistrarTransaccion = casoUsoRegistrarTransaccion;
+        this.casoUsoListarTransacciones = casoUsoListarTransacciones;
         this.publicadorTransacciones = publicadorTransacciones;
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Mono<RespuestaTransaccion> registrar(@Valid @RequestBody SolicitudCrearTransaccion solicitud) {
-        return casoUsoRegistrarTransaccion.ejecutar(solicitud.getMonto());
+        return casoUsoRegistrarTransaccion.ejecutar(solicitud);
+    }
+
+    @GetMapping
+    public Flux<RespuestaTransaccion> listar() {
+        return casoUsoListarTransacciones.ejecutar();
     }
 
     @GetMapping(value = "/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)

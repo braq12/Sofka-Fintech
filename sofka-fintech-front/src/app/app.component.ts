@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  standalone: true,
+  imports: [RouterOutlet,ToastModule],
+  template: `
+    <p-toast></p-toast>
+    <router-outlet></router-outlet>
+  `,
 })
-export class AppComponent {
-  title = 'sofka-fintech-front';
-}
+export class AppComponent {}

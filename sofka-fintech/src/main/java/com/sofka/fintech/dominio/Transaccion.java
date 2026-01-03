@@ -1,11 +1,11 @@
 package com.sofka.fintech.dominio;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Table("TRANSACCIONES")
 public class Transaccion {
@@ -23,14 +23,26 @@ public class Transaccion {
     @Column("FECHA_REGISTRO")
     private LocalDateTime fechaRegistro;
 
+    @Column("DESCRIPCION")
+    private String descripcion;
+
     public Transaccion() {
     }
 
-    public Transaccion(Long idTransaccion, BigDecimal monto, BigDecimal comision, LocalDateTime fechaRegistro) {
+    public Transaccion(Long idTransaccion, BigDecimal monto, BigDecimal comision, LocalDateTime fechaRegistro, String descripcion) {
         this.idTransaccion = idTransaccion;
         this.monto = monto;
         this.comision = comision;
         this.fechaRegistro = fechaRegistro;
+        this.descripcion = descripcion;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public Long getIdTransaccion() {

@@ -2,8 +2,6 @@ package com.sofka.fintech.infraestructura.streaming;
 
 import com.sofka.fintech.api.dto.RespuestaTransaccion;
 import com.sofka.fintech.puertos.salida.PublicadorTransacciones;
-
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

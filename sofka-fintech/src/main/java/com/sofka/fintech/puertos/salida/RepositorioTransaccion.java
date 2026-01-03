@@ -6,5 +6,6 @@ import reactor.core.publisher.Mono;
 
 public interface RepositorioTransaccion {
     Mono<Transaccion> guardar(Transaccion transaccion);
+
     Flux<Transaccion> listar();
 }

@@ -1,0 +1,59 @@
+<form [formGroup]="formulario" class="contenido-formulario">
+  <div class="campo">
+    <label for="monto" class="etiqueta-campo">Monto</label>
+
+    <p-inputNumber
+      inputId="monto"
+      formControlName="monto"
+      [min]="0"
+      mode="currency"
+      currency="COP"
+      locale="es-CO"
+      [maxFractionDigits]="2"
+      styleClass="w-full"
+    >
+    </p-inputNumber>
+
+    <small *ngIf="monto?.touched && monto?.errors?.['required']"
+      >El monto es obligatorio</small
+    >
+    <small *ngIf="monto?.touched && monto?.errors?.['min']"
+      >El monto debe ser mayor a cero</small
+    >
+</div>
+      <div class="campo">
+    <label for="descripcion" class="etiqueta-campo">Descripción</label>
+    <input type="text" pInputText
+      inputId="descripcion"
+      formControlName="descripcion"
+      styleClass="w-full"
+    >
+
+    <small *ngIf="descripcion?.touched && descripcion?.errors?.['required']"
+      >La descripcion es obligatoria</small
+    >
+    <small *ngIf="descripcion?.touched && descripcion?.errors?.['min']"
+      >La descripcion debe ser mayor a 4 caracteres</small
+    >
+  </div>
+
+  <p-divider></p-divider>
+
+  <div class="acciones-modal">
+    <p-button
+      label="Cancelar"
+      severity="secondary"
+      icon="pi pi-times"
+      (onClick)="cancelar()"
+    >
+    </p-button>
+
+    <p-button
+      label="Registrar"
+      icon="pi pi-check"
+      [loading]="cargando"
+      (onClick)="registrar()"
+    >
+    </p-button>
+  </div>
+</form>

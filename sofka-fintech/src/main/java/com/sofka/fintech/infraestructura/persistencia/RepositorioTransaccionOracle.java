@@ -2,7 +2,6 @@ package com.sofka.fintech.infraestructura.persistencia;
 
 import com.sofka.fintech.dominio.Transaccion;
 import com.sofka.fintech.puertos.salida.RepositorioTransaccion;
-
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

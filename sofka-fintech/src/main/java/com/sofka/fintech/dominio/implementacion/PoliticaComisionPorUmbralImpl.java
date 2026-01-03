@@ -1,12 +1,11 @@
 package com.sofka.fintech.dominio.implementacion;
 
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-
-
 import com.sofka.fintech.dominio.PoliticaComision;
 import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 @Service
 public class PoliticaComisionPorUmbralImpl implements PoliticaComision {

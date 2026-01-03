@@ -9,12 +9,18 @@ public class RespuestaTransaccion {
     private BigDecimal monto;
     private BigDecimal comision;
     private LocalDateTime fechaRegistro;
+    private String descripcion;
 
-    public RespuestaTransaccion(Long idTransaccion, BigDecimal monto, BigDecimal comision, LocalDateTime fechaRegistro) {
+    public RespuestaTransaccion(Long idTransaccion, BigDecimal monto, BigDecimal comision, LocalDateTime fechaRegistro, String descripcion) {
         this.idTransaccion = idTransaccion;
         this.monto = monto;
         this.comision = comision;
         this.fechaRegistro = fechaRegistro;
+        this.descripcion = descripcion;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
     }
 
     public Long getIdTransaccion() {

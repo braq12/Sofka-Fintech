@@ -6,6 +6,7 @@ import reactor.core.publisher.Mono;
 
 public interface PublicadorTransacciones {
     Mono<Void> publicar(RespuestaTransaccion transaccion);
+
     Flux<RespuestaTransaccion> flujo();
 }
 
