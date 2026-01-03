@@ -115,6 +115,8 @@ En la ruta ..\BD, se encuentra el docker compose para levantar la base de datos 
 * Usuario: SOFKA
 * Contraseña: admin123
 
+Ejecutar scripts contenido en la carpeta ..\BD (script.sql), el cual contiene el CREATE de la tabla constuida.
+
 **Backend: ejecutar en local**
 1. Configurar application.yml (ejemplo):
 <img width="437" height="450" alt="image" src="https://github.com/user-attachments/assets/209b47b7-7177-466f-8f79-5bc97b8a5ee1" />
