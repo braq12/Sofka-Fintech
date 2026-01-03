@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.sofka</groupId>
-    <artifactId>sofka-fintech</artifactId>
+    <artifactId>sofka-fintech-ms</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>sofka-fintech</name>
+    <name>sofka-fintech-ms</name>
     <description>Demo project for Spring Boot</description>
     <url/>
     <licenses>

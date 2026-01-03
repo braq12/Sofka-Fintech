@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a545dcd7-01fc-4f5b-a967-7b919fb2f938" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/SofkaFintechApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/api/ControladorTransaccion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/api/dto/RespuestaTransaccion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/api/dto/SolicitudCrearTransaccion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/api/errores/ManejadorGlobalErrores.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/api/errores/RespuestaError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/aplicacion/CasoUsoListarTransacciones.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/aplicacion/CasoUsoRegistrarTransaccion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/aplicacion/implementacion/ServicioListarTransaccionesImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/aplicacion/implementacion/ServicioRegistrarTransaccionImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/dominio/PoliticaComision.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/dominio/Transaccion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/dominio/constantes/ComisionConstantes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/dominio/excepciones/ExcepcionNegocio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/dominio/implementacion/PoliticaComisionPorUmbralImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/infraestructura/configuracion/ConfiguracionCors.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/infraestructura/persistencia/RepositorioTransaccionOracle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/infraestructura/persistencia/RepositorioTransaccionR2dbcSpring.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/infraestructura/streaming/PublicadorTransaccionesSse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/puertos/salida/PublicadorTransacciones.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/fintech/puertos/salida/RepositorioTransaccion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sofka/fintech/SofkaFintechApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sofka/fintech/api/ControladorTransaccionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sofka/fintech/aplicacion/implementacion/ServicioListarTransaccionesImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sofka/fintech/aplicacion/implementacion/ServicioRegistrarTransaccionImplTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="37iWX3irHpS5bas2rt2zjfmnHlg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.SofkaFintechApplication.executor": "Run",
+    "JUnit.ControladorTransaccionTest.executor": "Run",
+    "JUnit.ServicioRegistrarTransaccionImplTest.executor": "Run",
+    "JUnit.java in sofka-fintech.executor": "Run",
+    "Maven.sofka-fintech [test].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/proyectos/Sofka-Fintech-Back/sofka-fintech-ms",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn test" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.SofkaFintechApplication">
+    <configuration name="SofkaFintechApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sofka.fintech.SofkaFintechApplication" />
+      <module name="sofka-fintech-ms" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sofka.fintech.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControladorTransaccionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sofka-fintech-ms" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sofka.fintech.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sofka.fintech.api" />
+      <option name="MAIN_CLASS_NAME" value="com.sofka.fintech.api.ControladorTransaccionTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicioRegistrarTransaccionImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sofka-fintech-ms" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sofka.fintech.aplicacion.implementacion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sofka.fintech.aplicacion.implementacion" />
+      <option name="MAIN_CLASS_NAME" value="com.sofka.fintech.aplicacion.implementacion.ServicioRegistrarTransaccionImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java in sofka-fintech" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sofka-fintech-ms" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="sofka-fintech-ms" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="sofka-fintech-ms" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SofkaFintechApplication" />
+        <item itemvalue="JUnit.java in sofka-fintech" />
+        <item itemvalue="JUnit.ControladorTransaccionTest" />
+        <item itemvalue="JUnit.ServicioRegistrarTransaccionImplTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a545dcd7-01fc-4f5b-a967-7b919fb2f938" name="Changes" comment="" />
+      <created>1767386407299</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1767386407299</updated>
+    </task>
+    <servers />
+  </component>
+</project>
