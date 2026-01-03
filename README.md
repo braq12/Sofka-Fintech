@@ -106,6 +106,9 @@ Angular CLI 19 (npm i -g @angular/cli@19)
 **Levantar Oracle**
 En la ruta ..\BD, se encuentra el docker compose para levantar la base de datos oracle free, ejecutar:
 
+<img width="243" height="229" alt="image" src="https://github.com/user-attachments/assets/c313fd72-2780-4ac9-b891-0b51378d89e7" />
+
+
 **docker compose up -d**
 **Datos de conexión**
 
