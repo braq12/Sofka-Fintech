@@ -11,6 +11,7 @@ import { routes } from './app.routes';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 import { MessageService } from 'primeng/api';
+import { provideHighcharts } from 'highcharts-angular'; 
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -23,5 +24,7 @@ export const appConfig: ApplicationConfig = {
     MessageService,
     provideHttpClient(withFetch(), withInterceptors([interceptorError])),
     provideAnimationsAsync(),
+    provideHighcharts(),
+    
   ],
 };

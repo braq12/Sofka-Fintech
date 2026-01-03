@@ -39,6 +39,12 @@
     </ng-template>
   </p-toolbar>
 
+  <p-card header="Resumen por descripción" styleClass="tarjeta-grafico">
+    <app-grafico-descripcion
+      [transacciones]="transacciones"
+    ></app-grafico-descripcion>
+  </p-card>
+
   <p-table
     [value]="transacciones"
     [paginator]="true"
@@ -89,18 +95,6 @@
   </p-table>
 </p-card>
 
-<div class="seccion-grafico">
-  <p-card header="Distribución por descripción">
-    <div class="contenedor-grafico">
-      <p-chart
-        type="bar"
-        [data]="datosGrafico"
-        [options]="opcionesGrafico"
-      ></p-chart>
-    </div>
-    <small>Ventana: últimos {{ minutosVentana }} minutos</small>
-  </p-card>
-</div>
 
 <p-dialog
   header="Registrar transacción"

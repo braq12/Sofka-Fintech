@@ -11,7 +11,10 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 
-import { ChartModule } from 'primeng/chart';
+import { GraficoDescripcionComponent } from '../grafico-descripcion/grafico-descripcion.component';
+
+
+
 
 import { FormularioTransaccionComponent } from '../formulario-transaccion/formulario-transaccion.component';
 import {
@@ -32,8 +35,8 @@ import {
     InputTextModule,
     ButtonModule,
     DialogModule,
-    ChartModule,
     FormularioTransaccionComponent,
+    GraficoDescripcionComponent,
   ],
   templateUrl: './tablero-transacciones.component.html',
 })
@@ -51,17 +54,6 @@ export class TableroTransaccionesComponent implements OnInit, OnDestroy {
 
   mostrarModalRegistro = false;
 
-  private coloresBarras = [
-    '#42A5F5', // azul
-    '#66BB6A', // verde
-    '#FFA726', // naranja
-    '#AB47BC', // morado
-    '#FF7043', // rojo
-    '#26C6DA', // cyan
-    '#D4E157', // lima
-    '#8D6E63', // café
-  ];
-
   private suscripcionSse?: Subscription;
 
   ngOnInit(): void {
@@ -73,7 +65,6 @@ export class TableroTransaccionesComponent implements OnInit, OnDestroy {
     this.servicio.listarTransacciones().subscribe({
       next: (data) => {
         this.transacciones = data;
-        this.inicializarGrafico();
       },
     });
   }
@@ -86,7 +77,6 @@ export class TableroTransaccionesComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (t) => {
           this.transacciones = [t, ...this.transacciones];
-          this.recalcularGrafico();
         },
         error: () => {
           this.estadoTiempoReal = 'DESCONECTADO';
@@ -94,88 +84,7 @@ export class TableroTransaccionesComponent implements OnInit, OnDestroy {
       });
   }
 
-  private inicializarGrafico(): void {
-    this.opcionesGrafico = {
-      responsive: true,
-      maintainAspectRatio: false,
-      indexAxis: 'y',
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          callbacks: {
-            label: (context: any) => {
-              const valor = Number(context.raw || 0);
-              return `Monto total: ${valor.toLocaleString('es-CO')}`;
-            },
-          },
-        },
-      },
-      scales: {
-        x: {
-          beginAtZero: true,
-          ticks: {
-            callback: (v: any) => Number(v).toLocaleString('es-CO'),
-          },
-        },
-      },
-    };
 
-    this.recalcularGrafico();
-  }
-
-  private recalcularGrafico(): void {
-    const ahora = new Date();
-    const inicio = new Date(ahora.getTime() - this.minutosVentana * 60_000);
-
-    const totalPorDescripcion = new Map<string, number>();
-
-    for (const tr of this.transacciones) {
-      const fecha = this.convertirFecha(tr.fechaRegistro);
-      if (!fecha) continue;
-
-      if (fecha < inicio || fecha > ahora) continue;
-
-      const descripcion = (tr.descripcion ?? 'Sin descripción').trim();
-      const monto = Number(tr.monto) || 0;
-
-      totalPorDescripcion.set(
-        descripcion,
-        (totalPorDescripcion.get(descripcion) ?? 0) + monto
-      );
-    }
-
-    const top = Array.from(totalPorDescripcion.entries())
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 8);
-
-    const etiquetas = top.map(([desc]) => desc);
-    const valores = top.map(([_, total]) => total);
-
-    this.datosGrafico = {
-      labels: etiquetas,
-      datasets: [
-        {
-          label: `Monto total por descripción (últimos ${this.minutosVentana} min)`,
-          data: valores,
-          backgroundColor: etiquetas.map(
-            (_, i) => this.coloresBarras[i % this.coloresBarras.length]
-          ),
-          borderRadius: 6,
-        },
-      ],
-    };
-  }
-
-  private convertirFecha(valor: string): Date | null {
-    if (!valor) return null;
-
-    // Normaliza fracción de segundos a 3 dígitos (ms)
-    // Ej: 2026-01-02T21:51:54.1402366 -> 2026-01-02T21:51:54.140
-    const normalizado = valor.replace(/\.(\d{3})\d+/, '.$1');
-
-    const d = new Date(normalizado);
-    return isNaN(d.getTime()) ? null : d;
-  }
 
   abrirModalRegistro(): void {
     this.mostrarModalRegistro = true;
