@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: sofka-fintech
+
+  r2dbc:
+    url: r2dbc:oracle://localhost:1521/FREEPDB1
+    username: SOFKA
+    password: admin123
+
+  sql:
+    init:
+      mode: never
+
+server:
+  port: 8085
+
+logging:
+  level:
+    org.springframework.r2dbc: INFO

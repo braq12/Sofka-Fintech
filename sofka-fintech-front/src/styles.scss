@@ -1,0 +1,74 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+.tarjeta-tablero {
+  margin: 1rem;
+}
+
+.barra-superior {
+  margin-bottom: 1rem;
+}
+
+.estado-tiempo-real {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.acciones-barra {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+
+.tabla-transacciones .p-datatable-header {
+  border: 0;
+}
+
+.modal-registro .p-dialog-content {
+  padding-top: 0.75rem;
+}
+
+.contenido-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.etiqueta-campo {
+  font-weight: 600;
+}
+
+.acciones-modal {
+  display: flex;
+  justify-content: flex-end;
+  gap: .75rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.seccion-grafico {
+  margin: 1rem 0;
+}
+
+.contenedor-grafico {
+  height: 260px;
+}
+
+.tarjeta-grafico {
+  margin: 1rem 0;
+}
+
+.contenedor-grafico {
+  height: 320px;
+}
+

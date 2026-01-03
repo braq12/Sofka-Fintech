@@ -1,0 +1,112 @@
+<p-card header="Tablero de transacciones" styleClass="tarjeta-tablero">
+  <p-toolbar styleClass="barra-superior">
+    <ng-template pTemplate="start">
+      <div class="estado-tiempo-real">
+        <span class="etiqueta">Tiempo real:</span>
+        <p-tag
+          [severity]="severidadEstado()"
+          [value]="estadoTiempoReal"
+        ></p-tag>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="end">
+      <div class="acciones-barra">
+        <p-button
+          label="Registrar transacción"
+          icon="pi pi-plus"
+          severity="success"
+          (onClick)="abrirModalRegistro()"
+        >
+        </p-button>
+
+        <p-button
+          label="Recargar"
+          icon="pi pi-refresh"
+          severity="secondary"
+          (onClick)="cargarInicial()"
+        >
+        </p-button>
+
+        <p-button
+          label="Reconectar"
+          icon="pi pi-wifi"
+          severity="help"
+          (onClick)="reconectarTiempoReal()"
+        >
+        </p-button>
+      </div>
+    </ng-template>
+  </p-toolbar>
+
+  <p-card header="Resumen por descripción" styleClass="tarjeta-grafico">
+    <app-grafico-descripcion
+      [transacciones]="transacciones"
+    ></app-grafico-descripcion>
+  </p-card>
+
+  <p-table
+    [value]="transacciones"
+    [paginator]="true"
+    [rows]="10"
+    [rowsPerPageOptions]="[10, 25, 50]"
+    [showCurrentPageReport]="true"
+    currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords}"
+    sortField="fechaRegistro"
+    [sortOrder]="-1"
+    responsiveLayout="scroll"
+    styleClass="p-datatable-sm tabla-transacciones"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="idTransaccion">
+          Id <p-sortIcon field="idTransaccion"></p-sortIcon>
+        </th>
+        <th pSortableColumn="monto">
+          Monto <p-sortIcon field="monto"></p-sortIcon>
+        </th>
+        <th pSortableColumn="comision">
+          Comisión <p-sortIcon field="comision"></p-sortIcon>
+        </th>
+        <th pSortableColumn="descripcion">
+          Descripción<p-sortIcon field="descripcion"></p-sortIcon>
+        </th>
+        <th pSortableColumn="fechaRegistro">
+          Fecha de registro <p-sortIcon field="fechaRegistro"></p-sortIcon>
+        </th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-t>
+      <tr>
+        <td>{{ t.idTransaccion }}</td>
+        <td>{{ t.monto | number : "1.0-2" }}</td>
+        <td>{{ t.comision | number : "1.0-2" }}</td>
+        <td>{{ t.descripcion }}</td>
+        <td>{{ t.fechaRegistro | date : "dd/MM/yyyy, h:mm a" }}</td>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="5">No hay transacciones para mostrar</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>
+
+
+<p-dialog
+  header="Registrar transacción"
+  [(visible)]="mostrarModalRegistro"
+  [modal]="true"
+  [closable]="true"
+  [draggable]="false"
+  [resizable]="false"
+  [style]="{ width: '520px' }"
+  styleClass="modal-registro"
+  (onHide)="cerrarModalRegistro()"
+>
+  <app-formulario-transaccion (finalizarModal)="cerrarModalRegistro()">
+  </app-formulario-transaccion>
+</p-dialog>
