@@ -1,8 +1,11 @@
 package com.sofka.fintech.api.dto;
 
+import lombok.Getter;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@Getter
 public class RespuestaTransaccion {
 
     private Long idTransaccion;
@@ -19,23 +22,4 @@ public class RespuestaTransaccion {
         this.descripcion = descripcion;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public Long getIdTransaccion() {
-        return idTransaccion;
-    }
-
-    public BigDecimal getMonto() {
-        return monto;
-    }
-
-    public BigDecimal getComision() {
-        return comision;
-    }
-
-    public LocalDateTime getFechaRegistro() {
-        return fechaRegistro;
-    }
 }

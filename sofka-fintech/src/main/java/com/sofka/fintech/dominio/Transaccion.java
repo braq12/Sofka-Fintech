@@ -1,5 +1,7 @@
 package com.sofka.fintech.dominio;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
@@ -7,6 +9,8 @@ import org.springframework.data.relational.core.mapping.Table;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@Setter
+@Getter
 @Table("TRANSACCIONES")
 public class Transaccion {
 
@@ -37,43 +41,4 @@ public class Transaccion {
         this.descripcion = descripcion;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public Long getIdTransaccion() {
-        return idTransaccion;
-    }
-
-    public void setIdTransaccion(Long idTransaccion) {
-        this.idTransaccion = idTransaccion;
-    }
-
-    public BigDecimal getMonto() {
-        return monto;
-    }
-
-    public void setMonto(BigDecimal monto) {
-        this.monto = monto;
-    }
-
-    public BigDecimal getComision() {
-        return comision;
-    }
-
-    public void setComision(BigDecimal comision) {
-        this.comision = comision;
-    }
-
-    public LocalDateTime getFechaRegistro() {
-        return fechaRegistro;
-    }
-
-    public void setFechaRegistro(LocalDateTime fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
-    }
 }

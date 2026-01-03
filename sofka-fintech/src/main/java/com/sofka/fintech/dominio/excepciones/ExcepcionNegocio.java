@@ -1,5 +1,8 @@
 package com.sofka.fintech.dominio.excepciones;
 
+import lombok.Getter;
+
+@Getter
 public class ExcepcionNegocio extends RuntimeException {
 
     private final String codigo;
@@ -9,7 +12,4 @@ public class ExcepcionNegocio extends RuntimeException {
         this.codigo = codigo;
     }
 
-    public String getCodigo() {
-        return codigo;
-    }
 }

@@ -5,15 +5,12 @@ import com.sofka.fintech.api.dto.SolicitudCrearTransaccion;
 import com.sofka.fintech.aplicacion.CasoUsoListarTransacciones;
 import com.sofka.fintech.aplicacion.CasoUsoRegistrarTransaccion;
 import com.sofka.fintech.puertos.salida.PublicadorTransacciones;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.reactive.server.WebTestClient;
-
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -22,7 +19,7 @@ import java.time.LocalDateTime;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
-
+/* Test apoyado en IA */
 @WebFluxTest(controllers = ControladorTransaccion.class)
 class ControladorTransaccionTest {
 

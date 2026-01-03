@@ -3,10 +3,8 @@ package com.sofka.fintech.aplicacion.implementacion;
 import com.sofka.fintech.api.dto.RespuestaTransaccion;
 import com.sofka.fintech.dominio.Transaccion;
 import com.sofka.fintech.puertos.salida.RepositorioTransaccion;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
 
@@ -16,6 +14,7 @@ import java.time.LocalDateTime;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
+/* Test apoyado en IA */
 class ServicioListarTransaccionesImplTest {
 
     private RepositorioTransaccion repositorioTransaccion;

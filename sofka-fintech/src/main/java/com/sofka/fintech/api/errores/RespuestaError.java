@@ -1,8 +1,11 @@
 package com.sofka.fintech.api.errores;
 
+import lombok.Getter;
+
 import java.time.OffsetDateTime;
 import java.util.List;
 
+@Getter
 public class RespuestaError {
 
     private String codigo;
@@ -17,19 +20,4 @@ public class RespuestaError {
         this.fecha = fecha;
     }
 
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public String getMensaje() {
-        return mensaje;
-    }
-
-    public List<String> getDetalles() {
-        return detalles;
-    }
-
-    public OffsetDateTime getFecha() {
-        return fecha;
-    }
 }

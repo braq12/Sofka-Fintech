@@ -1,7 +1,6 @@
 package com.sofka.fintech.api.errores;
 
 import com.sofka.fintech.dominio.excepciones.ExcepcionNegocio;
-import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -14,7 +13,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestControllerAdvice
-@Order(-2)
 public class ManejadorGlobalErrores {
 
     @ExceptionHandler(WebExchangeBindException.class)
